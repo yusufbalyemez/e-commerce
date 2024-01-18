@@ -1,7 +1,7 @@
 import './App.css'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Policy from './components/Policy'
+import Header from './components/Layout/Header/Header'
+import Footer from './components/Layout/Footer/Footer'
+import Policy from './components/Layout/Policy/Policy'
 
 function App() {
 

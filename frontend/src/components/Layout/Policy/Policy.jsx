@@ -1,4 +1,4 @@
-
+import "./Policy.css"
 const Policy = ()=>{
     return (
         <section className="policy">
