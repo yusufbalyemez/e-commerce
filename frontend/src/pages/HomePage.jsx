@@ -9,9 +9,10 @@ import Campaigns from '../components/Layout/Campaigns/Campaigns'
 import Blogs from '../components/Layout/Blogs/Blogs'
 import Brands from '../components/Layout/Brands/Brands'
 import CampaignSingle from '../components/Layout/CampaignSingle/CampaignSingle'
+import React from 'react'
 const HomePage = () => {
     return (
-        <div>
+        <React.Fragment>
             <Header />
             <Slider />
             <Categories />
@@ -22,7 +23,7 @@ const HomePage = () => {
             <CampaignSingle />
             <Policy />
             <Footer />
-        </div>
+        </React.Fragment>
     )
 }
 
