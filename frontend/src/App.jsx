@@ -6,6 +6,8 @@ import ShopPage from './pages/ShopPage'
 
 import './App.css'
 import ContactPage from './pages/ContactPage'
+import Auth from './components/Layout/Auth/Auth'
+import AuthPage from './pages/AuthPage'
 
 
 function App() {
@@ -13,7 +15,8 @@ function App() {
     <React.Fragment>
       {/* <HomePage/> */}
       {/* <ShopPage/> */}
-      <ContactPage/>
+      {/* <ContactPage/> */}
+      <AuthPage/>
     
     </React.Fragment>
   )
