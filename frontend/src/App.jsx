@@ -9,6 +9,8 @@ import ContactPage from './pages/ContactPage'
 import AuthPage from './pages/AuthPage'
 import CardPage from './pages/CartPage'
 import './App.css'
+import BlogPage from './pages/BlogPage'
+import BlogDetailPage from './pages/BlogDetailPage'
 
 
 
@@ -19,7 +21,9 @@ function App() {
       {/* <ShopPage/> */}
       {/* <ContactPage/> */}
       {/* <AuthPage/> */}
-      <CardPage/>
+      {/* <CardPage/> */}
+      {/* <BlogPage/> */}
+      <BlogDetailPage/>
     
     </React.Fragment>
   )

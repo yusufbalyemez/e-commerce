@@ -1,6 +1,7 @@
 .section-title {
     text-align: center;
     margin-bottom: 35px;
+
   }
   
   .section-title h2 {
@@ -9,3 +10,8 @@
     line-height: 0.8;
     margin-bottom: 4px;
   }
+
+  .blog-page {
+    margin-top: 40px;
+  }
+  
