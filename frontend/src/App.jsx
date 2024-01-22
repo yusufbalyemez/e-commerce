@@ -11,6 +11,7 @@ import CardPage from './pages/CartPage'
 import './App.css'
 import BlogPage from './pages/BlogPage'
 import BlogDetailPage from './pages/BlogDetailPage'
+import ProductDetailsPage from './pages/ProductDetailsPage'
 
 
 
@@ -23,7 +24,8 @@ function App() {
       {/* <AuthPage/> */}
       {/* <CardPage/> */}
       {/* <BlogPage/> */}
-      <BlogDetailPage/>
+      {/* <BlogDetailPage/> */}
+      <ProductDetailsPage/>
     
     </React.Fragment>
   )
