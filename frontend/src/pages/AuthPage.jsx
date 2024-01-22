@@ -1,8 +1,8 @@
 import React from "react"
-import Auth from "../components/Layout/Auth/Auth"
-import Header from "../components/Layout/Header/Header"
-import Policy from "../components/Layout/Policy/Policy"
-import Footer from "../components/Layout/Footer/Footer"
+import Auth from "../components/Auth/Auth"
+import Header from "../components/Header/Header"
+import Policy from "../components/Policy/Policy"
+import Footer from "../components/Footer/Footer"
 
 const AuthPage = () => {
     return(

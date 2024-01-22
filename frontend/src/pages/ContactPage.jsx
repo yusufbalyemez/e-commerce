@@ -1,8 +1,7 @@
 import React from "react"
-import Footer from "../components/Layout/Footer/Footer"
-import Header from "../components/Layout/Header/Header"
-import Policy from "../components/Layout/Policy/Policy"
-import Contact from "../components/Layout/Contact/Contact"
+import Footer from "../components/Footer/Footer"
+import Header from "../components/Header/Header"
+import Contact from "../components/Contact/Contact"
 
 const ContactPage = () => {
     return(

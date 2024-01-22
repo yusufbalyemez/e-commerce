@@ -4,10 +4,12 @@ import HomePage from './pages/HomePage'
 
 import ShopPage from './pages/ShopPage'
 
-import './App.css'
+
 import ContactPage from './pages/ContactPage'
-import Auth from './components/Layout/Auth/Auth'
 import AuthPage from './pages/AuthPage'
+import CardPage from './pages/CartPage'
+import './App.css'
+
 
 
 function App() {
@@ -16,7 +18,8 @@ function App() {
       {/* <HomePage/> */}
       {/* <ShopPage/> */}
       {/* <ContactPage/> */}
-      <AuthPage/>
+      {/* <AuthPage/> */}
+      <CardPage/>
     
     </React.Fragment>
   )

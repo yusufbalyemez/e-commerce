@@ -1,10 +1,9 @@
 import React from "react"
-import Header from "../components/Layout/Header/Header"
-import Categories from "../components/Layout/Categories/Categories"
-import Products from "../components/Layout/Products/Products"
-import CampaignSingle from "../components/Layout/CampaignSingle/CampaignSingle"
-import Policy from "../components/Layout/Policy/Policy"
-import Footer from "../components/Layout/Footer/Footer"
+import Header from "../components/Header/Header"
+import Categories from "../components/Categories/Categories"
+import Products from "../components/Products/Products"
+import CampaignSingle from "../components/CampaignSingle/CampaignSingle"
+import Footer from "../components/Footer/Footer"
 
 const ShopPage = () => {
     return(
