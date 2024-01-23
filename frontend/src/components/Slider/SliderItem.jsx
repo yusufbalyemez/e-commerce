@@ -1,7 +1,7 @@
-import { useState } from "react"
+
 
 const SliderItem = ({imageSrc}) => {
-    const [currentSlide,setCurrentSlide] = useState(0)
+    
     return (
         <div className="slider-item fade">
             <div className="slider-image">
