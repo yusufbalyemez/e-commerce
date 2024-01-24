@@ -12,7 +12,10 @@ const CartProvider = ({ children }) => {
 
     const addToCart = (cartItem) => {
         // setcartItems([...cartItems,product] 1. yol)
-        setcartItems((prevCart) => [...prevCart, cartItem]); /* 2. yol */
+        setcartItems((prevCart) => [...prevCart, {
+            ...cartItem,
+            quantity: cartItem.quantity ? cartItem.quantity : 1,
+        }]); /* 2. yol */
 
     };
 
