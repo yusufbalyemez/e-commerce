@@ -7,9 +7,9 @@ import './index.css'
 import MainLayout from './layouts/MainLayout.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode> bunun kaldırılmasının sebebi development mode olarak geçiyormuş. Bu olunca konsolda 2 kere işlem yapılıyordu
     <MainLayout>
       <App />
     </MainLayout>
-  </React.StrictMode>,
+  // </React.StrictMode>,
 )

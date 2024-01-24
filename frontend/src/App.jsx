@@ -12,14 +12,14 @@ import './App.css'
 function App() {
   return (
     <React.Fragment>
-      <HomePage/>
+      {/* <HomePage/> */}
       {/* <ShopPage/> */}
       {/* <ContactPage/> */}
       {/* <AuthPage/> */}
       {/* <CardPage/> */}
       {/* <BlogPage/> */}
       {/* <BlogDetailPage/> */}
-      {/* <ProductDetailsPage/> */}
+      <ProductDetailsPage/>
     
     </React.Fragment>
   )
