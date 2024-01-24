@@ -13,9 +13,9 @@ const Gallery = () => {
             <div className="product-thumb">
                 <div className="glide__track" data-glide-el="track">
                     <ol className="gallery-thumbs glide__slides" >
-                        {productsData[0].img.thumbs.map((itemImg,key) => (
-                            <li className="glide__slide glide__slide--active" key={key} onClick={()=> setActiveImg(itemImg)}>
-                                <img src={itemImg} alt="" className={`img-fluid ${itemImg === activeImg ? "active": ""}`} />
+                        {productsData[0].img.thumbs.map((itemImg, key) => (
+                            <li className="glide__slide glide__slide--active" key={key} onClick={() => setActiveImg(itemImg)}>
+                                <img src={itemImg} alt="" className={`img-fluid ${itemImg === activeImg ? "active" : ""}`} />
                             </li>
                         ))}
 
