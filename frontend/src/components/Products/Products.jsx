@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "./Products.css"
 
 function Products() {
+    const [products] = useState(productsData)
 
     function NextBtn({ onClick }) {
         return (
@@ -22,7 +23,7 @@ function Products() {
         )
     }
 
-    const [products] = useState(productsData)
+    
 
     const sliderSettings = {
 
@@ -59,7 +60,7 @@ function Products() {
                 <div className="product-wrapper product-carousel">
                     <Slider {...sliderSettings}>
                         {products.map((product) => (
-                            <ProductItem product={product} key={product.id} />
+                            <ProductItem productItem={product} key={product.id}/>
                         ))}
                     </Slider>
                 </div>

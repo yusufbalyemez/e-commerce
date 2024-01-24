@@ -1,9 +1,9 @@
 
 import Cart from "../components/Cart/Cart"
-const CardPage = () => {
+const CartPage = () => {
     return (
         <Cart />
 
     )
 }
-export default CardPage
+export default CartPage

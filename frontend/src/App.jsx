@@ -3,7 +3,7 @@ import HomePage from './pages/HomePage'
 import ShopPage from './pages/ShopPage'
 import ContactPage from './pages/ContactPage'
 import AuthPage from './pages/AuthPage'
-import CardPage from './pages/CartPage'
+import CartPage from './pages/CartPage'
 import BlogPage from './pages/BlogPage'
 import BlogDetailPage from './pages/BlogDetailPage'
 import ProductDetailsPage from './pages/ProductDetailsPage'
@@ -16,10 +16,10 @@ function App() {
       {/* <ShopPage/> */}
       {/* <ContactPage/> */}
       {/* <AuthPage/> */}
-      {/* <CardPage/> */}
+      <CartPage/>
       {/* <BlogPage/> */}
       {/* <BlogDetailPage/> */}
-      <ProductDetailsPage/>
+      {/* <ProductDetailsPage/> */}
     
     </React.Fragment>
   )
