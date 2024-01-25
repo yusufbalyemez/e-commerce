@@ -1,5 +1,6 @@
 
 import { useContext } from "react"
+import {useNavigate} from "react-router-dom"
 import "./ProductItem.css"
 import { CartContext } from "../../context/CartProvider"
 
@@ -9,12 +10,13 @@ import { CartContext } from "../../context/CartProvider"
 const ProductItem = ({productItem}) =>{
     
     const {addToCart, cartItems } = useContext(CartContext)
+    const navigate = useNavigate();
 
     const filteredCart = cartItems.find(
       (cartItem)=> cartItem.id === productItem.id
       )
 
-      console.log(filteredCart)
+   
    
     return(
         <div className="product-item glide__slide glide__slide--active">
@@ -58,7 +60,11 @@ const ProductItem = ({productItem}) =>{
           <button>
             <i className="bi bi-heart-fill"></i>
           </button>
-          <a href="#" className="product-link" >
+          {/* Link yönteminin diğer alternatifi */}
+          <a className="product-link" onClick={(e)=>{
+            e.preventDefault()
+            navigate(`/product/${productItem.id}`)
+          }}> 
             <i className="bi bi-eye-fill"></i>
           </a>
           <a href="#">
