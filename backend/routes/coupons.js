@@ -119,6 +119,27 @@ router.put("/:couponId", async (req, res) => {
 });
 
 
+//Kupon Kodu Silme (Delete)
+
+router.delete("/:couponId", async (req, res) => {
+    try {
+        const couponId = req.params.couponId;
+
+        // Önce kuponu bul
+        const coupon = await Coupon.findById(couponId);
+
+        // kupon varsa, sil
+        if (coupon) {
+            await Coupon.deleteOne({ _id: couponId });
+            res.status(200).json({ message: "Coupon deleted successfully" });
+        } else {
+            res.status(404).json({ error: "Coupon not found" });
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ error: "Server Error." });
+    }
+});
 
 
 module.exports = router;
