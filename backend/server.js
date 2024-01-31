@@ -1,7 +1,8 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const dotenv = require("dotenv")
+const express = require("express"); //Veritabanı kurulumu için
+const mongoose = require("mongoose"); // mangoDb için
+const dotenv = require("dotenv") //gizli değişkenler , yollar oluşturmak için
 const app = express()
+const logger = require("morgan") //console ekranda atılan req, res leri gösteriyor
 const mainRoute = require("./routes/index.js")
 const port = 5000;
 
@@ -17,6 +18,7 @@ const connect = async () => {
 }
 
 //middlewares
+app.use(logger("dev"))
 app.use(express.json()) //bu gerekli. ara katmanmış
 
 
