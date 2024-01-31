@@ -16,6 +16,10 @@ const connect = async () => {
     }
 }
 
+//middlewares
+app.use(express.json()) //bu gerekli. ara katmanmış
+
+
 //Ana Router Dosyası
 app.use("/api",mainRoute)
 
