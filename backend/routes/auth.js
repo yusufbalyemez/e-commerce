@@ -39,4 +39,37 @@ router.post("/register", async (req,res)=>{
     }
 })
 
+//Kullanıcı Girişi (Login)
+
+router.post("/login", async (req,res)=>{
+    try {
+        const {email,password} = req.body; //buradaki bilgiler html kısmından gelecek
+
+        const user = await User.findOne({email}) //arama ve bulma işlemi
+
+        //Eğer kullanıcı yoksa şöyle bir kod döndür
+        if(!user){
+            return res.status(401).json({error: "Invalid email or password."})
+        }
+
+        //Veritabanında hashlenmiş kodu çevirme 
+        const isPasswordValid = await bcrypt.compare(password,user.password);
+
+        if(!isPasswordValid){
+            return res.status(401).json({error: "Invalid password"});
+        }
+
+        res.status(200).json({
+            id: user._id,
+            email: user.email,
+            username: user.username,
+            role: user.role,
+            avatar: user.avatar
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({error: "Server error."})
+    }
+})
+
 module.exports = router;
