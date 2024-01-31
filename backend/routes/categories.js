@@ -1,7 +1,6 @@
 const express = require("express")
 const router = express.Router();
 const Category = require("../models/Category"); //Category tablosundaki verileri getir.
-const { route } = require("./products");
 
 
 //YENİ BİR KATEGORİ OLUŞTURMA(CREATE)
@@ -66,14 +65,14 @@ router.put("/:categoryId", async (req, res) => {
 
         const existingCategory = await Category.findById(categoryId);
 
-        if(!existingCategory){
-            return res.status(404).json({error: "Category not found"})
+        if (!existingCategory) {
+            return res.status(404).json({ error: "Category not found" })
         }
 
         const updatedCategory = await Category.findByIdAndUpdate(
             categoryId,
             updates,
-            {new: true} //bunu yapmazsan eski değeri gönderiyor. Onun için bu özellik önemli
+            { new: true } //bunu yapmazsan eski değeri gönderiyor. Onun için bu özellik önemli
         )
 
         res.status(200).json(updatedCategory)
@@ -83,6 +82,29 @@ router.put("/:categoryId", async (req, res) => {
         res.status(500).json({ error: "Server Error." })
     }
 })
+
+
+//Kategori Silme (Delete)
+
+router.delete("/:categoryId", async (req, res) => {
+    try {
+        const categoryId = req.params.categoryId;
+
+        // Önce kategoriyi bul
+        const category = await Category.findById(categoryId);
+
+        // Kategori varsa, sil
+        if (category) {
+            await Category.deleteOne({ _id: categoryId });
+            res.status(200).json({ message: "Category deleted successfully" });
+        } else {
+            res.status(404).json({ error: "Category not found" });
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ error: "Server Error." });
+    }
+});
 
 
 module.exports = router;
