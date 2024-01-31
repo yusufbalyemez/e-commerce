@@ -92,6 +92,32 @@ router.get("/code/:couponCode", async (req, res) => {
 
 });
 
+//Kupon Güncelleme (Update)
+router.put("/:couponId", async (req, res) => {
+    try {
+        const couponId = req.params.couponId; //id yi alıyoruz
+        const updates = req.body; //güncellenecek veriler updates değişkenine aktarılıyor.
+
+        const existingcoupon = await Coupon.findById(couponId);
+
+        if (!existingcoupon) {
+            return res.status(404).json({ error: "coupon not found" })
+        }
+
+        const updatedcoupon = await Coupon.findByIdAndUpdate(
+            couponId,
+            updates,
+            { new: true } //bunu yapmazsan eski değeri gönderiyor. Onun için bu özellik önemli
+        )
+
+        res.status(200).json(updatedcoupon)
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ error: "Server Error." })
+    }
+});
+
 
 
 
