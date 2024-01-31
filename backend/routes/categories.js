@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
         res.status(500).send("Hata")
         console.log(error)
     }
-})
+});
 
 // Tüm kategorileri getirme (Read - All)
 router.get("/", async (req, res) => {

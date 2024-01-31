@@ -34,8 +34,8 @@ router.post("/register", async (req,res)=>{
         await newUser.save(); //bunu unutma veri tabanına bu kayıt ediyor.
         res.status(201).json(newUser) // yeni kullanıcıyı kaydettiği bilgisini gönder
     } catch (error) {
-        console.log(error);
         res.status(500).json({error: "Server error."})
+        console.log(error)
     }
 })
 

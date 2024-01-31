@@ -1,4 +1,3 @@
-
 const express = require("express")
 const router = express.Router();
 const Product = require("../models/Product.js"); //Product tablosundaki(modeldeki) verileri getir.
@@ -11,7 +10,8 @@ router.post("/", async (req, res) => {
 
         res.status(201).json(newProduct);
     } catch (error) {
-        console.log(error);
+        res.status(500).json({error: "Server error."})
+        console.log(error)
     }
 });
 
