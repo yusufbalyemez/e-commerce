@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
     }
 });
 
-// Belirli bir ürünü getirme (Read - Single)
+// Belirli bir ürünü id'ye göre getirme (Read - Single)
 router.get("/:productId", async (req, res) => {
     try {
         const productId = req.params.productId;

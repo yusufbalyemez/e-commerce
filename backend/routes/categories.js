@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
         //Başarılı bir kod olduysa bu kodu gönder. (https response status diye arat ayrıntıları var)
         res.status(201).json(newCategory)
     } catch (error) {
-        res.status(500).send("Hata")
+        res.status(500).json({error: "Server error."})
         console.log(error)
     }
 });
@@ -31,7 +31,7 @@ router.get("/", async (req, res) => {
         console.log(error)
         res.status(500).json({ error: "Server error." })
     }
-})
+});
 
 // Belirli bir kategoriyi getirme (read - single)
 router.get("/:categoryId", async (req, res) => {
@@ -51,7 +51,7 @@ router.get("/:categoryId", async (req, res) => {
     }
 
 
-})
+});
 
 
 //Kategori Güncelleme (Update)
