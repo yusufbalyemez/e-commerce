@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router();
-const Category = require("../models/Category") //Category tablosundaki verileri getir.
+const Category = require("../models/Category"); //Category tablosundaki verileri getir.
+const { route } = require("./products");
 
 
 //YENİ BİR KATEGORİ OLUŞTURMA(CREATE)
@@ -32,8 +33,56 @@ router.get("/", async (req, res) => {
         res.status(200).json(categories); //bunla frontend tarafına bilgi gönderiliyor
     } catch (error) {
         console.log(error)
-        res.status(500).json({error: "Server error."})
+        res.status(500).json({ error: "Server error." })
     }
 })
+
+// Belirli bir kategoriyi getirme (read - single)
+router.get("/:categoryId", async (req, res) => {
+    try {
+        const categoryId = req.params.categoryId;
+
+        try {
+            const category = await Category.findById(categoryId)
+            res.status(200).json(category)
+        } catch (error) {
+            return res.status(404).json({ error: "Category not found" })
+        }
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ error: "Server Error." })
+    }
+
+
+})
+
+
+//Kategori Güncelleme (Update)
+router.put("/:categoryId", async (req, res) => {
+    try {
+        const categoryId = req.params.categoryId; //id yi alıyoruz
+        const updates = req.body; //güncellenecek veriler updates değişkenine aktarılıyor.
+
+        const existingCategory = await Category.findById(categoryId);
+
+        if(!existingCategory){
+            return res.status(404).json({error: "Category not found"})
+        }
+
+        const updatedCategory = await Category.findByIdAndUpdate(
+            categoryId,
+            updates,
+            {new: true} //bunu yapmazsan eski değeri gönderiyor. Onun için bu özellik önemli
+        )
+
+        res.status(200).json(updatedCategory)
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ error: "Server Error." })
+    }
+})
+
 
 module.exports = router;
