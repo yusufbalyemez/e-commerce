@@ -14,9 +14,6 @@ router.post("/", async (req, res) => {
         //frontendden gönderilen veriyi yakalar.
         const myData = req.body;
 
-        console.log(name)
-        console.log(img)
-
         //Başarılı bir kod olduysa bu kodu gönder. (https response status diye arat ayrıntıları var)
         res.status(201).json(newCategory)
     } catch (error) {
