@@ -1,6 +1,7 @@
 //BURAYI YAPARKEN React Ant Design kütüphanesi kullanıldı. Bootstrap, Taildwind gibi bir şey galiba.
 import { Layout, Menu } from "antd";
 import { useNavigate } from "react-router-dom"
+import AdminUserPage from "../pages/admin/AdminUserPage";
 import {
   UserOutlined,
   LaptopOutlined,
@@ -10,6 +11,7 @@ import {
   ShoppingCartOutlined,
   AppstoreOutlined,
 } from "@ant-design/icons";
+
 
 const { Sider, Header, Content } = Layout;
 
@@ -168,7 +170,7 @@ const AdminLayout = ({ children }) => {
                 }}
               >
                 {children}
-                asd
+                <AdminUserPage/>
               </div>
             </Content>
           </Layout>
