@@ -5,7 +5,7 @@ const app = express()
 const cors = require("cors")
 const logger = require("morgan") //console ekranda atılan req, res leri gösteriyor
 const mainRoute = require("./routes/index.js")
-const port = 5000;
+const port = 5001;
 
 dotenv.config()
 
