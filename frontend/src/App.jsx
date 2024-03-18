@@ -8,8 +8,10 @@ import AuthPage from './pages/AuthPage'
 import CartPage from './pages/CartPage'
 import BlogDetailPage from './pages/BlogDetailPage'
 import ProductDetailsPage from './pages/ProductDetailsPage'
-import AdminUserPage from './pages/admin/AdminUserPage'
+import UserPage from './pages/Admin/UserPage'
+import CategoryPage from './pages/Admin/Categories/CategoryPage'
 import './App.css'
+
 
 
 function App() {
@@ -24,7 +26,8 @@ function App() {
       <Route path="/blog/:id" element={<BlogDetailPage />} />
       <Route path="/product/:id" element={<ProductDetailsPage />} />
       <Route path='/admin/*'>
-        <Route path='users' element={<AdminUserPage/>}/>
+        <Route path='users' element={<UserPage/>}/>
+        <Route path='categories' element={<CategoryPage/>}/>
       </Route>
 
     </Routes>

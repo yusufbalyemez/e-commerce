@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Popconfirm, Table, message } from "antd";
 
-const AdminUserPage = () => {
+const UserPage = () => {
     const apiUrl = import.meta.env.VITE_API_BASE_URL;
     const [dataSource, setDataSourse] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -107,4 +107,4 @@ const AdminUserPage = () => {
     )
 }
 
-export default AdminUserPage
+export default UserPage

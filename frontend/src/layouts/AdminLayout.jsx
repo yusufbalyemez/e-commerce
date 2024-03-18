@@ -1,7 +1,7 @@
 //BURAYI YAPARKEN React Ant Design kütüphanesi kullanıldı. Bootstrap, Taildwind gibi bir şey galiba.
 import { Layout, Menu } from "antd";
 import { useNavigate } from "react-router-dom"
-import AdminUserPage from "../pages/admin/AdminUserPage";
+import UserPage from "../pages/Admin/UserPage";
 import {
   UserOutlined,
   LaptopOutlined,
@@ -170,7 +170,7 @@ const AdminLayout = ({ children }) => {
                 }}
               >
                 {children}
-                <AdminUserPage/>
+                <UserPage/>
               </div>
             </Content>
           </Layout>
