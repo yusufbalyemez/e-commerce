@@ -72,4 +72,16 @@ router.post("/login", async (req,res)=>{
     }
 })
 
+//Kullanıcıları Getir
+
+router.get("/getUsers", async (req,res)=>{
+    try {
+        const users = await User.find({});
+        res.status(200).json(users);
+    }catch(error){
+        console.error(error)
+        res.status(500).json({error: "Server Error"})
+    }
+}); 
+
 module.exports = router;

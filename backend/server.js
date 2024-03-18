@@ -19,9 +19,9 @@ const connect = async () => {
 }
 
 //middlewares
-app.use(logger("dev"))
+app.use(logger("dev")) //bu ne bilmiyorum bak.
 app.use(express.json()) //bu gerekli. ara katmanmış
-app.use(cors());
+app.use(cors()); //bu da hangi ip den ulaşılacağına izin veriyor bu da çok önemli
 
 
 //Ana Router Dosyası

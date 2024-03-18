@@ -14,11 +14,14 @@ const Register = () => {
     });
 
     const navigate = useNavigate();
+    const apiUrl = import.meta.env.VITE_API_BASE_URL;
+
     //inputtaki verileri toplu almak için
     const handleInputChanged = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value }) //tümünü yerleştir, name bilgisine göre value yi al demekmiş
     }
+
 
     const handleRegister = async (e) => {
         e.preventDefault();
@@ -26,17 +29,17 @@ const Register = () => {
         // console.log("veri kayıt edildi.")
 
         try {
-            const response = await fetch(`http://localhost:5000/api/auth/register`, {
+            const response = await fetch(`${apiUrl}/api/auth/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(formData) //JSON.stringify() fonksiyonu önemli. Json formatına döndürüp göndermek için
             });
             if(response.ok){
                 const data = await response.json();
-                const {password, ...rest} = data; //data içerisinden passwordu çıkartıp localStorage'ye kayıt et
-                localStorage.setItem("user",JSON.stringify(data)); //localStorageye kayıt ediyor.
+                const {password, ...rest} = data; //data içerisinden passwordu çıkartıp yeni diziye(rest) dizisine yayıp localStorage'ye kayıt et
+                localStorage.setItem("user",JSON.stringify(rest)); //localStorageye password eksik şekilde kayıt ediyor.
                 message.success("Kayıt başarılı.")
                 navigate("/") // yönlendirme kodu
             }else{
