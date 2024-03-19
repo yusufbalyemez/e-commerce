@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Button, Popconfirm, Space, Table, message } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const CategoryPage = () => {
     const apiUrl = import.meta.env.VITE_API_BASE_URL;
     const [dataSource, setDataSourse] = useState([]);
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
     const columns = [
         {
@@ -38,7 +40,7 @@ const CategoryPage = () => {
                 /* Space i kullanmaktaki amaç otomatikmen butonlar arası boşluk bırakıyor. */
                 <Space size={"middle"}> 
 
-                    <Button type="primary" >Düzenle</Button>
+                    <Button type="primary" onClick={()=>navigate(`/admin/categories/update/${record._id}`)}>Düzenle</Button>
 
                     <Popconfirm
                         title="Kullanıcıyı Sil"

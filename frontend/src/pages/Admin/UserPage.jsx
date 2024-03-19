@@ -80,7 +80,7 @@ const UserPage = () => {
         }
     }
 
-    //Kullanıcıları listeleyen foksiyon
+    //Kullanıcıları listeleyen fonksiyon
     const fetchUsers = async () => {
         setLoading(true);
         try {

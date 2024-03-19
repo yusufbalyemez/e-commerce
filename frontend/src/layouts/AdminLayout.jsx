@@ -170,7 +170,7 @@ const AdminLayout = ({ children }) => {
                 }}
               >
                 {children}
-                <UserPage/>
+                
               </div>
             </Content>
           </Layout>
