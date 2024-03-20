@@ -1,4 +1,6 @@
 import { useState } from "react"
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import { Form, Input, Button, message, Spin, InputNumber, Select } from "antd"
 
 
@@ -70,6 +72,22 @@ const CreateProductPage = () => {
                     <InputNumber/>
                 </Form.Item>
 
+                {/* Açıklama */} 
+                <Form.Item
+                    label="Ürün Açıklaması"
+                    name="description"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Lütfen bir ürün açıklaması girin.',
+                        },
+                    ]}
+                >
+                    <ReactQuill theme="snow" style={{backgroundColor:"white"}}/>
+                </Form.Item>
+
+
+                    {/* Fiyat */}
                 <Form.Item
                     label="Fiyat"
                     name="current"

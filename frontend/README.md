@@ -1,6 +1,9 @@
 # React + Vite
 npm install vite --save-dev
 
+# React Quill - Text Editor
+npm i react-quill
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
