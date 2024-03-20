@@ -43,8 +43,8 @@ const CategoryPage = () => {
                     <Button type="primary" onClick={()=>navigate(`/admin/categories/update/${record._id}`)}>Düzenle</Button>
 
                     <Popconfirm
-                        title="Kullanıcıyı Sil"
-                        description="Kullanıcıyı silmek istediğinizden emin misiniz?"
+                        title="Kategoriyi Sil"
+                        description="Kategoriyi silmek istediğinizden emin misiniz?"
                         okText="Evet"
                         cancelText="Hayır"
                         onConfirm={() => deleteCategory(record._id)}
