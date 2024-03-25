@@ -13,18 +13,22 @@ const ProductItem = ({productItem}) =>{
     const navigate = useNavigate();
 
     const filteredCart = cartItems.find(
-      (cartItem)=> cartItem.id === productItem.id
+      (cartItem)=> cartItem._id === productItem._id
       )
 
-   
+   const originalPrice = productItem.price.current;
+   const discountPercentage= productItem.price.discount;
+
+   //İndirimli Fiyat Hesaplama
+   const discountedPrice = originalPrice - (discountPercentage * originalPrice) / 100;
    
     return(
         <div className="product-item glide__slide glide__slide--active">
       <div className="product-image">
           
         <a href="#">
-          <img src={productItem.img.singleImage} alt="" className="img1"/>
-          <img src={productItem.img.thumbs[1]} alt="" className="img2"/>
+          <img src={productItem.img[0]} alt="" className="img1"/>
+          <img src={productItem.img[1]} alt="" className="img2"/>
         </a>
       </div>
      
@@ -49,12 +53,17 @@ const ProductItem = ({productItem}) =>{
           </li>
         </ul>
         <div className="product-prices">
-          <strong className="new-price">{`$${productItem.price.newPrice.toFixed(2)}`}</strong>
-          <span className="old-price">{`$${productItem.price.oldPrice.toFixed(2)}`}</span>
+          <strong className="new-price">{`$${discountedPrice.toFixed(2)}`}</strong>
+          <span className="old-price">{`$${originalPrice.toFixed(2)}`}</span>
         </div>
-        <span className="product-discount">-{productItem.discount}%</span>
+        <span className="product-discount">-{productItem.price.discount}%</span>
         <div className="product-links">
-          <button className="add-to-cart" onClick={()=> addToCart(productItem)} disabled={filteredCart}>
+          <button className="add-to-cart" onClick={()=> addToCart({
+            ...productItem,
+            price:discountedPrice,
+          })
+          } 
+          disabled={filteredCart}>
             <i className="bi bi-basket-fill"></i>
           </button>
           <button>
@@ -63,7 +72,7 @@ const ProductItem = ({productItem}) =>{
           {/* Link yönteminin diğer alternatifi */}
           <a className="product-link" onClick={(e)=>{
             e.preventDefault()
-            navigate(`/product/${productItem.id}`)
+            navigate(`/product/${productItem._id}`)  
           }}> 
             <i className="bi bi-eye-fill"></i>
           </a>
