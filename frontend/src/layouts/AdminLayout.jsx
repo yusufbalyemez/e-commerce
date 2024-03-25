@@ -127,7 +127,8 @@ const AdminLayout = ({ children }) => {
       icon: <RollbackOutlined />,
       label: "Ana Sayfaya Git",
       onClick: () => {
-        navigate(`/`);
+        //navigate(`/`);
+        window.location.href = "/";
       },
     },
   ];
